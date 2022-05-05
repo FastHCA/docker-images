@@ -52,7 +52,7 @@ RUN set -eux; \
 		\
 		dpkg-dev \
 		gcc \
-    g++ \
+		g++ \
 		libc6-dev \
 		libssl-dev \
 		make \
