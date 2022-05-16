@@ -39,8 +39,8 @@ RUN set -eux; \
 	gosu nobody true
 
 ENV REDIS_VERSION 6.0.16
-ENV REDIS_DOWNLOAD_URL https://github.com/FastHCA/redis/archive/refs/tags/6.0.16-lua-enhancement-20220502-beta.tar.gz
-ENV REDIS_DOWNLOAD_SHA 1da7aa8f2aa347ae4ffa2f33194eccc85d2fea6df393521248284c1583386471
+ENV REDIS_DOWNLOAD_URL https://github.com/FastHCA/redis/archive/refs/tags/6.0.16-lua-enhancement-20220516-beta.tar.gz
+ENV REDIS_DOWNLOAD_SHA cc06fe8e50be2361370928609ff27c11a0898da89604531f42c0d750f2461d63
 
 RUN set -eux; \
 	\
@@ -131,6 +131,7 @@ VOLUME /data
 WORKDIR /data
 
 COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 6379
