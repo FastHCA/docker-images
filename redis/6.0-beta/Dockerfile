@@ -39,8 +39,8 @@ RUN set -eux; \
 	gosu nobody true
 
 ENV REDIS_VERSION 6.0.16
-ENV REDIS_DOWNLOAD_URL https://github.com/FastHCA/redis/archive/refs/tags/6.0.16-lua-enhancement-20220517-beta.tar.gz
-ENV REDIS_DOWNLOAD_SHA e662202b5d793168f3e54a26413d38e11c5c0e64083bd4e47c92f867182ac82c
+ENV REDIS_DOWNLOAD_URL https://github.com/FastHCA/redis/archive/refs/tags/6.0.16-lua-enhancement-20220522-beta.tar.gz
+ENV REDIS_DOWNLOAD_SHA a2cae754b0c903410b7b84369e7611203164f73ce56d0bb080ce5b21087a738a
 
 RUN set -eux; \
 	\

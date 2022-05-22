@@ -1,7 +1,7 @@
 version: '3'
 services:
   etcd:
-    image: fasthca/redis:6.0.16-lua-enhancement-20220517-beta
+    image: fasthca/redis:6.0.16-lua-enhancement-20220522-beta
     container_name: redis
     ports:
       - "6379:6379"
