@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  badgerlit:
+    image: fasthca/badgerlit:v0.3.3
+    container_name: badgerlit
+    ports:
+      - "8962:8962"
+    volumes:
+      - "./data:/.data"
