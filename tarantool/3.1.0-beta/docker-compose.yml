@@ -1,0 +1,60 @@
+version: "3.0"  
+
+services:
+  instance-001:
+    image: fasthca/tarantool:3.1.0
+    container_name: app-instance-001
+    volumes:
+      - ./app:/opt/tarantool/app
+      - ./data:/var/lib/tarantool
+    environment:
+      - TT_APP_NAME=app
+      - TT_INSTANCE_NAME=instance-001
+      - TT_VINYL_MEMORY=4294967296 # 設定為 4G, 預設為 128M
+      - TT_VINYL_CACHE=3221225472  # 設定為 (TT_VINYL_MEMORY * 0.75), 預設為 128M
+      - TT_VINYL_READ_THREADS=2    # 設定為 2, 預設為 1
+      - TT_VINYL_WRITE_THREADS=4   # 設定為 4, 預設為 4
+    networks:
+      - tarantool
+    ports:
+      - "3301:3301"
+
+  instance-002:
+    image: fasthca/tarantool:3.1.0
+    container_name: app-instance-002
+    volumes:
+      - ./app:/opt/tarantool/app
+      - ./data:/var/lib/tarantool
+    environment:
+      - TT_APP_NAME=app
+      - TT_INSTANCE_NAME=instance-002
+      - TT_VINYL_MEMORY=4294967296 # 設定為 4G, 預設為 128M
+      - TT_VINYL_CACHE=3221225472  # 設定為 (TT_VINYL_MEMORY * 0.75), 預設為 128M
+      - TT_VINYL_READ_THREADS=2    # 設定為 2, 預設為 1
+      - TT_VINYL_WRITE_THREADS=4   # 設定為 4, 預設為 4
+    networks:
+      - tarantool
+    ports:
+      - "3302:3301"
+
+  instance-003:
+    image: fasthca/tarantool:3.1.0
+    container_name: app-instance-003
+    volumes:
+      - ./app:/opt/tarantool/app
+      - ./data:/var/lib/tarantool
+    environment:
+      - TT_APP_NAME=app
+      - TT_INSTANCE_NAME=instance-003
+      - TT_VINYL_MEMORY=4294967296 # 設定為 4G, 預設為 128M
+      - TT_VINYL_CACHE=3221225472  # 設定為 (TT_VINYL_MEMORY * 0.75), 預設為 128M
+      - TT_VINYL_READ_THREADS=2    # 設定為 2, 預設為 1
+      - TT_VINYL_WRITE_THREADS=4   # 設定為 4, 預設為 4
+    networks:
+      - tarantool
+    ports:
+      - "3303:3301"
+
+networks:
+  tarantool:
+    driver: bridge
