@@ -1,0 +1,28 @@
+credentials:
+  users:
+    guest:
+      roles: [ super ]
+
+app:
+  file: 'app/app.lua'
+
+replication:
+  failover: election
+
+groups:
+  group-001:
+    replicasets:
+      replicaset-001:
+        instances:
+          instance-001:
+            iproto:
+              listen:
+                - uri: instance-001:3301
+          instance-002:
+            iproto:
+              listen:
+                - uri: instance-002:3301
+          instance-003:
+            iproto:
+              listen:
+                - uri: instance-003:3301
