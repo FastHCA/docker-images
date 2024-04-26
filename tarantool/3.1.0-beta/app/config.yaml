@@ -5,6 +5,8 @@ credentials:
 
 app:
   file: 'app/app.lua'
+  cfg:
+    greeting: 'Hello'
 
 replication:
   failover: election
